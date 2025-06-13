@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/Hima204/Todo-list/static/css/main.cd3fb727.css",
-    "main.js": "/Hima204/Todo-list/static/js/main.8c32f616.js",
-    "index.html": "/Hima204/Todo-list/index.html",
-    "main.cd3fb727.css.map": "/Hima204/Todo-list/static/css/main.cd3fb727.css.map",
-    "main.8c32f616.js.map": "/Hima204/Todo-list/static/js/main.8c32f616.js.map"
+    "main.css": "/Todo-list/static/css/main.cd3fb727.css",
+    "main.js": "/Todo-list/static/js/main.8c32f616.js",
+    "index.html": "/Todo-list/index.html",
+    "main.cd3fb727.css.map": "/Todo-list/static/css/main.cd3fb727.css.map",
+    "main.8c32f616.js.map": "/Todo-list/static/js/main.8c32f616.js.map"
   },
   "entrypoints": [
     "static/css/main.cd3fb727.css",
