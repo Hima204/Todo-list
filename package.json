@@ -2,8 +2,7 @@
   "name": "frontend",
   "version": "1.0.0",
   "private": true,
-  "proxy": "http://localhost:5000",
-  "homepage": "https://github.com/Hima204/Todo-list.git",
+  "homepage": "https://hima204.github.io/Todo-list",
   "dependencies": {
     "axios": "^1.9.0",
     "gh-pages": "^6.3.0",

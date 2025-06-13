@@ -2,6 +2,11 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
 
+const API_BASE =
+  process.env.NODE_ENV === "production"
+    ? "https://your-backend-name.onrender.com"
+    : "http://localhost:5000";
+
 function App() {
   const [todos, setTodos] = useState([]);
   const [title, setTitle] = useState("");
@@ -16,7 +21,7 @@ function App() {
 
   const fetchTodos = async () => {
     try {
-      const res = await axios.get("/api/todos");
+      const res = await axios.get(`${API_BASE}/api/todos`);
       setTodos(res.data);
     } catch (err) {
       console.error("Error fetching todos:", err);
@@ -26,7 +31,7 @@ function App() {
   const createTodo = async () => {
     if (!title.trim()) return;
     try {
-      await axios.post("/api/todos", { title });
+      await axios.post(`${API_BASE}/api/todos`, { title });
       setTitle("");
       fetchTodos();
     } catch (err) {
@@ -36,7 +41,7 @@ function App() {
 
   const updateTodo = async (id, data) => {
     try {
-      await axios.put(`/api/todos/${id}`, data);
+      await axios.put(`${API_BASE}/api/todos/${id}`, data);
       fetchTodos();
     } catch (err) {
       console.error("Error updating todo:", err);
@@ -45,7 +50,7 @@ function App() {
 
   const deleteTodo = async (id) => {
     try {
-      await axios.delete(`/api/todos/${id}`);
+      await axios.delete(`${API_BASE}/api/todos/${id}`);
       fetchTodos();
     } catch (err) {
       console.error("Error deleting todo:", err);
@@ -147,7 +152,6 @@ function App() {
               </>
             )}
 
-            {/* Show pin only when not editing */}
             {editingId !== todo._id && hoveredId === todo._id && (
               <button
                 className="btn-pin-hover"
@@ -158,7 +162,6 @@ function App() {
               </button>
             )}
 
-            {/* Show delete only when not editing */}
             {editingId !== todo._id && (
               <button
                 className="btn-delete"
